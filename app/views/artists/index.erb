@@ -1,0 +1,15 @@
+
+ 
+ <h1> Welcome, <%= @current_user.name %> </h1>
+
+
+
+
+ <h2>My Saved Artists</h2>
+ 
+ <% @artists.each do |artist| %>
+ Name: 
+ <a href="/artists/#{artist.id}"><%= artist.name %> </a><br>
+<% end %>
+  
+     <a href="/artists/new">Add a new artist</a>

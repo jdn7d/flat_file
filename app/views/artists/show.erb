@@ -1,0 +1,13 @@
+<h1>Artists</h1>
+
+<div class="artist">
+  <h3>Name: <%= @artist.name %></h3><br>
+</div><br>
+
+<a href="/artworks/new"> Add an artwork </a><br>
+
+<form method="post" action="/artists/<%= @artists.id %>">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="delete">
+</form>
+

@@ -1,0 +1,12 @@
+<h1>Piecs by <%= @artist.name %></h1>
+
+<div class="artwork">
+  <h3>Title: <%= @artworks.title%></h3><br>
+</div><br>
+
+<a href="/artworks/new"> Add an artwork </a><br>
+
+<form method="post" action="/artists/<%= @artists.id %>">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="delete">
+</form>
