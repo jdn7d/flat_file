@@ -1,6 +1,5 @@
 class ArtworkController < ApplicationController
 
-    
     get '/artworks' do 
         if !logged_in?
          redirect to '/login'
@@ -12,17 +11,16 @@ class ArtworkController < ApplicationController
 
     get '/artworks/new' do 
         if !logged_in?
-        redirect '/login' 
+            redirect '/login' 
         else
-        erb :'artworks/new'
+            @artworks = Artwork.all
+            erb :'artworks/new'
         end
     end
 
     post '/artworks' do 
-        @artworks = Artwork.new(params)
-      
-        @artworks.save
-        
+        @artwork = Artwork.new(params)
+        @artwork.save
             erb :'/artworks/show'
     
         end

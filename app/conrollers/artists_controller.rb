@@ -11,15 +11,15 @@ class ArtistController < ApplicationController
 
     get '/artists/new' do 
         if !logged_in?
-        redirect '/login' 
+            redirect '/login' 
         else
-        erb :'artists/new'
+            @artists = Artist.all
+            erb :'artists/new'
         end
     end
 
     post '/artists' do 
         @artist = Artist.new(params)
-      
         @artist.save
         
             erb :'/artists/show'
@@ -44,7 +44,8 @@ class ArtistController < ApplicationController
     end
 
     delete '/artists/:id' do
-
+        @artist = Artist.delete(params[:id])
+        redirect to("/")
     end
 
     get '/artists/:id/edit' do 
