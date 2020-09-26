@@ -6,7 +6,11 @@ class SessionsController < ApplicationController
     end
 
     get '/login' do 
+        if logged_in?
+            redirect '/artists/index'
+        else 
         erb :login
+        end
     end
 
     post "/sessions" do 
