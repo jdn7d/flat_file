@@ -39,8 +39,18 @@ class ArtistController < ApplicationController
         end
     end
 
-    patch '/artists/:id' do
+    get '/artists/:id/edit' do 
+        @artist = Artist.find(params[:id])
+        erb :'artists/edit'
+    end
 
+    patch '/artists/:id' do
+        @artist = Artist.find(params[:id])
+        if @artist.update(params[:artist])
+        redirect to "/artists/#{@artist.id}"
+        else
+            erb :"artists/edit"
+        end
     end
 
     delete '/artists/:id' do
@@ -48,8 +58,6 @@ class ArtistController < ApplicationController
         redirect '/artists'
     end
 
-    get '/artists/:id/edit' do 
-      
-    end
+ 
 
 end

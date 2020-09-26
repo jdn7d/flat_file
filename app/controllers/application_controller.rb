@@ -26,6 +26,7 @@ class ApplicationController < Sinatra::Base
       user = User.find_by(:email => email)
       if user && user.authenticate(password)    
       session[:user_id] = user.id
+      redirect '/artists/index'
       else 
         redirect '/login'
     end

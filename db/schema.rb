@@ -10,12 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_25_210902) do
+ActiveRecord::Schema.define(version: 2020_09_26_165327) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
     t.text "notes"
-    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -25,6 +24,13 @@ ActiveRecord::Schema.define(version: 2020_09_25_210902) do
     t.string "medium"
     t.string "location"
     t.text "notes"
+    t.integer "artist_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "user_artists", force: :cascade do |t|
+    t.integer "user_id"
     t.integer "artist_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

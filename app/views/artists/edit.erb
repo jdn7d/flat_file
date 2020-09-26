@@ -1,4 +1,13 @@
 <form action="/artists/<%= @artist.id %>" method="post">
     <input id="hidden" type="hidden" name="_method" value="patch">
     <input type="text" ...>
+
+    
+    <ul>
+    <li>
+      <label for="name">Name</label>
+      <input id="name" type="text" name="name" value="<%= @artist.name %>" />
+    </li>
+  </ul>
+  <input type="submit" />
 </form>
