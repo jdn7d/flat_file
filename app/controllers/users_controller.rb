@@ -13,14 +13,11 @@ class UserController < ApplicationController
     end
 
     post '/signup' do
-        if  params[:email] == "" || params[:password] == ""
-            redirect to '/signup'
-        else
             @user = User.new
             @user.email = params[:email]
             @user.password = params[:password]
             @user.name = params[:name]
-        end
+    
         if  @user.save
             session[:user_id] = @user.id
             redirect '/login'
@@ -33,6 +30,7 @@ class UserController < ApplicationController
     post "/login" do 
         #login a user with this email
         login(params[:email], params[:password])
+        redirect '/artists/index'
     end
     
     get '/logout' do 

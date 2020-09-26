@@ -17,18 +17,18 @@ class ApplicationController < Sinatra::Base
       !!current_user
     end
 
-    def current_user
-      @current_user ||= User.find_by(:email => session[:email]) if session[:email]
-    end
-
+    
     def login(email, password)
       user = User.find_by(:email => email)
       if user && user.authenticate(password)    
-      session[:user_email] = user.email
-      redirect '/artists/index'
+        session[:id] = user.id
       else 
         redirect '/login'
       end
+    end
+    
+    def current_user
+      @current_user ||= User.find_by(:id => session[:id]) if session[:id]
     end
 
     def logout!
