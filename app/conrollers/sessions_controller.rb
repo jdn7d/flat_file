@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
 
     get '/signup' do
-        erb :signup # #users/new
+        erb :signup #users/new
     end
 
     get '/login' do 

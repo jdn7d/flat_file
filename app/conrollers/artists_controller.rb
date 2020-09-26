@@ -45,7 +45,7 @@ class ArtistController < ApplicationController
 
     delete '/artists/:id' do
         @artist = Artist.delete(params[:id])
-        redirect to("/")
+        redirect '/artists'
     end
 
     get '/artists/:id/edit' do 
