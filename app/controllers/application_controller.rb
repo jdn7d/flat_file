@@ -7,10 +7,9 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "my_application_secret"
     set :views, Proc.new { File.join(root, "../views/") }
   end
-  get '/' do 
 
+  get '/' do 
     erb :'/login'
-  
   end
 
   helpers do 
@@ -25,16 +24,15 @@ class ApplicationController < Sinatra::Base
     def login(email, password)
       user = User.find_by(:email => email)
       if user && user.authenticate(password)    
-      session[:user_id] = user.id
+      session[:user_email] = user.email
       redirect '/artists/index'
       else 
         redirect '/login'
+      end
     end
-  end
 
     def logout!
       session.clear
     end
   end
-
 end
