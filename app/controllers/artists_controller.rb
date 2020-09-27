@@ -4,7 +4,7 @@ class ArtistController < ApplicationController
        if   !logged_in?
             redirect to '/login'
        else
-            @artists = Artist.all
+            @artists = @current_user.artists
             erb :'artists/index'       
        end
     end
