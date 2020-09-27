@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
     validates :email, presence: true
-    validates :username, uniqueness: true
+    validates :email, uniqueness: true
 
     has_many :users_artist
     has_many :artists, through: :users_artist

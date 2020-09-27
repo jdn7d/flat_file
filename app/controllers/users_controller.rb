@@ -20,7 +20,8 @@ class UserController < ApplicationController
     
         if  @user.save
             session[:user_id] = @user.id
-            redirect '/login'
+            login(params[:email], params[:password])
+            redirect '/artists/index'
         else
             erb :signup #users/new
         end
