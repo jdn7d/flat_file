@@ -13,6 +13,7 @@ class ArtistController < ApplicationController
         if !logged_in?
             redirect '/login' 
         else
+            @artist = Artist.new
             erb :'artists/new'
         end
     end
@@ -22,7 +23,9 @@ class ArtistController < ApplicationController
             if params[:name] == ""
               redirect to "/artists/new"
             else
-                @artist = @current_user.artists.build(params)
+                
+                @artist = current_user.artists.new(params)
+            
                 if
                     @artist.save
                     erb :'/artists/show'

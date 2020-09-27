@@ -1,6 +1,6 @@
 class Artist < ActiveRecord::Base
 
     has_many :artworks
-    has_many :user_artists
-    has_many :users, through: :user_artists
+    has_many :users_artists
+    has_many :users, through: :users_artists
 end
