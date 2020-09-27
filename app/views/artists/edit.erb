@@ -1,13 +1,18 @@
-<form action="/artists/<%= @artist.id %>" method="post">
-    <input id="hidden" type="hidden" name="_method" value="patch">
-    <input type="text" ...>
 
+  <h1>Edit <%= @artist.name %></h1><br>
+  <h2>Name: <%= @artist.name %></h2><br>
+  <h2>Notes: <%= @artist.notes %></h2><br>
+
+  <form method="post" action="/artists/<%= @artist.id %>">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+   
+    <label for="name">Name</label>
+    <input class="input" type="text" name="artist[name]" placeholder="edit name"  value="<%= @artist.name %>"required>
+   
+    <label for="notes">Notes</label>
+    <input id="notes" type="text" name="artist[notes]" value="<%= @artist.notes %>" />
+  
+    <input type="submit" />
+    </form>
     
-    <ul>
-    <li>
-      <label for="name">Name</label>
-      <input id="name" type="text" name="name" value="<%= @artist.name %>" />
-    </li>
-  </ul>
-  <input type="submit" />
-</form>
+   

@@ -8,6 +8,7 @@ class ArtworkController < ApplicationController
          erb :'artworks/index'       
         end
      end
+     
 
     get '/artworks/new' do 
         if !logged_in?
