@@ -19,12 +19,9 @@ class ArtistController < ApplicationController
     
     post '/artists' do 
         if !logged_in?
-            redirect to "/lasdf   ogin"
+            redirect to "/login"
         else
-            
-            @artist = Artist.new(name: params[:name],notes: params[:notes])
-            @current_user.artists << @artist 
-            
+            @artist = Artist.new(name: params[:name],notes: params[:notes])    
             if
                 
                   @artist.save
@@ -55,7 +52,7 @@ class ArtistController < ApplicationController
 
     patch '/artists/:id' do
         @artist = Artist.find(params[:id])
-        if @artist.update(params[:artist])
+        if @artist.update(params)
             redirect to "/artists/#{@artist.id}"
         else
             erb :"artists/edit"

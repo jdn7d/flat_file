@@ -1,11 +1,18 @@
+<h1  class="main-header">Currently viewing <%= @artist.name %></h1><br>
+ 
 
-<div class="artist">
-  <h1>Name: <%= @artist.name %></h1><br>
-</div><br>
+<% @artist.artworks.each do |artwork| %>
+  <p>Title: <a href="/artworks/<%= artwork.id %>">
+   <%= artwork.title %> </a><br>
+  <% end %>
 
+ 
+   
+  <form method="get" action="/artworks/new">
+  <input id="hidden" type="hidden" name="artist_id" value="<%=@artist.id %>">
+  <input type="submit" value="Add an artwork">
+</form>
 
-
-<a href="/artworks/new"> Add an artwork </a><br>
 
 <form method="post" action="/artists/<%= @artist.id %>">
   <input id="hidden" type="hidden" name="_method" value="DELETE">

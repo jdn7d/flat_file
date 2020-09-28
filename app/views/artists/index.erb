@@ -1,14 +1,11 @@
+ <h1 class="main-header"><%= @current_user.name %>'s Flatfile </h1>
 
+    <h2 class="smaller-header">My Saved Artists</h2>
  
- <h1><%= @current_user.name %>'s Flatfile </h1>
-
- <h2>My Saved Artists</h2>
- 
- <% @artists.each do |artist| %>
- <p>Name: 
- <a href="/artists/<%= artist.id %>">
-  <%= artist.name %> </a><br>
- <% end %>
+        <% @artists.each do |artist| %>
+        <p>Name: 
+        <a href="/artists/<%= artist.id %>">
+        <%= artist.name %> </a><br>
+        <% end %>
   
      <a href="/artists/new">Add a new artist</a>
-</p>

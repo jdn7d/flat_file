@@ -14,16 +14,21 @@ class ArtworkController < ApplicationController
         if !logged_in?
             redirect '/login' 
         else
+            @artist = Artist.find(params[:artist_id])
             erb :'artworks/new'
         end
     end
 
     post '/artworks' do 
-        @artwork = Artwork.new(params)
-        @artwork.artist = Artist.create(params)
-        @artwork.save
-        redirect to '/artists/show'
+        @artwork = Artwork.new(title: params[:title],medium: params[:medium], location: params[:location], notes: params[:notes])
+        @artist = Artist.find(params[:artist_id])
+        @artist.artworks << @artwork 
+        if @artwork.save
+        erb :'artists/show'
+        else
+            erb :'artworks/new'
         end
+    end
 
     get '/artworks/:id' do
        
