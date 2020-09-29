@@ -1,12 +1,12 @@
 class ArtistController < ApplicationController
 
     get '/artists' do 
-       if   !logged_in?
+        if   !logged_in?
             redirect to '/login'
-       else
+        else
             @artists = @current_user.artists
             erb :'artists/index'       
-       end
+        end
     end
 
     get '/artists/new' do 
@@ -39,6 +39,7 @@ class ArtistController < ApplicationController
             @artist = Artist.find_by(id: params[:id])
         end
         if @artist
+        
             erb :'/artists/show'
         else
             redirect '/artists'
@@ -52,7 +53,7 @@ class ArtistController < ApplicationController
 
     patch '/artists/:id' do
         @artist = Artist.find(params[:id])
-        if @artist.update(params)
+        if @artist.update(params[:artist])
             redirect to "/artists/#{@artist.id}"
         else
             erb :"artists/edit"

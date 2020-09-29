@@ -1,9 +1,17 @@
-<h3 class="main-header">Title: <%= @artwork.title%></h3><br>
-</div><br>
+<h1>Title: <%= @artwork.title%></h3><br>
+<%= @artwork.medium%> <br>
+<%= @artwork.location%> <br>
 
-<a href="/artworks/new"> Add an artwork </a><br>
+<%= @artwork.notes%>
+
 
 <form method="post" action="/artworks/<%= @artwork.id %>">
   <input id="hidden" type="hidden" name="_method" value="DELETE">
   <input type="submit" value="delete">
 </form>
+
+<form method="get" action="/artists/<%= @artwork.id %>/edit">
+ <input type="submit" value="edit">
+</form>
+
+

@@ -1,9 +1,9 @@
-<h1  class="main-header">Currently viewing <%= @artist.name %></h1><br>
+<h1>Currently viewing <%= @artist.name %></h1><br>
  
 
 <% @artist.artworks.each do |artwork| %>
   <p>Title: <a href="/artworks/<%= artwork.id %>">
-   <%= artwork.title %> </a><br>
+  <%= artwork.title %> </a></p><br>
   <% end %>
 
  
