@@ -24,10 +24,7 @@ class ArtworkController < ApplicationController
         @artist.artworks.create(params[:artwork])
             redirect "artists/#{@artist.id}"   
     end
-
-
     
-
     get '/artworks/:id' do
         if !logged_in?
             redirect '/login' 
@@ -50,15 +47,16 @@ class ArtworkController < ApplicationController
         patch '/artworks/:id' do
             @artwork = Artwork.find(params[:id])
             if @artwork.update(params[:artwork])
-                redirect to "/artwork/#{@artist.id}"
+                redirect to "/artworks/#{@artwork.id}"
             else
                 erb :"artworks/edit"
             end
         end
     
         delete '/artworks/:id' do
-            @artworks = Artwork.delete(params[:id])
-            redirect '/artworks'
+            @artwork = Artwork.delete(params[:id])
+            redirect to "/artists/#{@artist.id}"
+           
         end
 
        

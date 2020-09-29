@@ -10,7 +10,9 @@
   <input type="submit" value="delete">
 </form>
 
-<form method="get" action="/artists/<%= @artwork.id %>/edit">
+  <%#<input id="hidden" type="hidden" name="artist_id" value="<%=@artist.id %>">
+
+<form method="get" action="/artworks/<%= @artwork.id %>/edit">
  <input type="submit" value="edit">
 </form>
 

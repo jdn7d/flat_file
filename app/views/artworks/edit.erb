@@ -1,0 +1,18 @@
+
+  <h1 class="main-header">Edit <%= @artwork.title %></h1><br>
+  <h2>Title: <%= @artwork.title %></h2><br>
+  <h2>Notes: <%= @artwork.medium %></h2><br>
+
+  <form method="post" action="/artworks/<%= @artwork.id %>">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+   
+    <label for="title">Title</label>
+    <input class="input" type="text" name="artwork[title]" placeholder="edit title"  value="<%= @artwork.title %>"required>
+   
+    <label for="medium">Notes</label>
+    <input id="medium" type="text" name="artwork[medium]" value="<%= @artwork.medium %>" />
+  
+    <input type="submit" />
+    </form>
+    
+   

@@ -22,6 +22,7 @@ class ArtistController < ApplicationController
             redirect to "/login"
         else
             @artist = Artist.new(name: params[:name],notes: params[:notes])    
+            @current_user.artists << @artist 
             if
                 
                   @artist.save
