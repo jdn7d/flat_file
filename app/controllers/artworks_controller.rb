@@ -4,7 +4,7 @@ class ArtworkController < ApplicationController
         if !logged_in?
          redirect to '/login'
         else
-         @artworks = Artworks.all
+         @artworks = @current_user.artworks
          erb :'artworks/index'       
         end
      end
@@ -60,4 +60,4 @@ class ArtworkController < ApplicationController
         end
 
        
-end
+    end

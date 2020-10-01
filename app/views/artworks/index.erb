@@ -1,7 +1,12 @@
 
+<%= @current_user.name %>'s saved Artwork
+
  <% @artworks.each do |work| %>
     Name: 
-    <a href="/artworks/:id"><%= work.title %> </a><br>
+    <a href="/artworks/:id"><%= work.title %> <%= work.artist.name %> </a><br>
+  
+  
    <% end %>
      
         <a href="/artworks/new">Add a new artwork</a>
+        

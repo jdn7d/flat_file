@@ -1,0 +1,109 @@
+
+body {font-family: Raleway, sans-serif; background: #C9B1EC;}
+
+.login-form
+{
+    display: block;
+    text-align: center;
+    border: 1px solid rgba(112,112,112,1);
+    background: white;
+    filter: drop-shadow(25px 40px 10px rgba(0, 0, 0, 0.161));
+	position: absolute;
+		overflow: visible;
+		width: 730px;
+		height: 700px;
+		left: 567px;
+      top: 145px;
+       border-radius: 5pt;
+
+        margin-left: auto;
+    margin-right: auto;
+}
+
+input[type=text], input[type=password] {
+ 
+  width: 514px;
+  padding: 20px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  
+  box-sizing: border-box;
+  text-align: center;  
+  background: #F2F2F2;
+  border-radius: 25pt;
+  border: 2.5px solid rgba(112,112,112,1);
+  font-size: 35px;
+  font-family: Raleway;
+}
+
+h1 {
+	text-align: center;
+    font-style: normal;
+		font-weight: normal;
+		font-size: 80px;
+      height: 50px;
+}
+
+h2 {
+
+text-align: center;
+color: #707070;
+	font-weight: lighter;
+	font-size: 32px;
+		color: rgb(31, 21, 21);
+
+}
+button {
+  background-color: #C9B1EC;
+  border-radius: 40px;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 10px 0;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+  font-size: 30px;
+   margin-left: auto;
+    margin-right: auto;
+    display:block;
+     border: 2px solid rgba(112,112,112,1);
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+#create-account{
+	left: 833px;
+	vertical-align: -200;
+
+		overflow: visible;
+		width: 255px;
+		white-space: nowrap;
+
+		cursor: pointer;
+		text-align: left;
+		font-family: Raleway;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 30px;
+		color: rgba(112,112,112,1);
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  

@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+ 
+
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+    
+    <title>FlatFile</title>
+  </head>
+  
+  <body>
+
+     <% if logged_in? %> 
+      <a href="/logout">Logout</a>
+     <%end%>
+
+
+    <div class="container">
+   
+    
+      <%= yield %>
+ 
+ 
+ 
+    </div>
+  </body>
+</html>
