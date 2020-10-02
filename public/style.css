@@ -12,15 +12,46 @@ body {font-family: Raleway, sans-serif; background: #C9B1EC;}
 		overflow: visible;
 		width: 730px;
 		height: 700px;
-		left: 567px;
+	
       top: 145px;
        border-radius: 5pt;
-
-        margin-left: auto;
-    margin-right: auto;
+   margin-left: auto;
+   margin-right: auto;
 }
 
-input[type=text], input[type=password] {
+#logout-button {
+    background-color: #C9B1EC;
+  border-radius: 40px;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 10px 0;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+  font-size: 30px;
+  align: right;
+    display:block;
+     border: 2px solid rgba(112,112,112,1);
+}
+
+.logged-in {
+   display: block;
+   text-align: center;
+   border: 1px solid rgba(112,112,112,1);
+   background: white;
+   filter: drop-shadow(25px 40px 10px rgba(0, 0, 0, 0.161));
+	position: absolute;
+	overflow: visible;
+	width: 80%;
+	height: 80%;
+	top: 145px;
+   border-radius: 5pt;
+   margin-left: auto;
+   margin-right: auto;
+
+}
+
+.input-box{
  
   width: 514px;
   padding: 20px 20px;
@@ -32,7 +63,7 @@ input[type=text], input[type=password] {
   background: #F2F2F2;
   border-radius: 25pt;
   border: 2.5px solid rgba(112,112,112,1);
-  font-size: 35px;
+  font-size: 30px;
   font-family: Raleway;
 }
 
@@ -83,7 +114,7 @@ span.psw {
   padding-top: 16px;
 }
 
-#create-account{
+#signup-login-link{
 	left: 833px;
 	vertical-align: -200;
 

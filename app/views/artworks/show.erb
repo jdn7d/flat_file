@@ -1,8 +1,12 @@
-<h1>Title: <%= @artwork.title%></h3><br>
+<h1>Title: <%= @artwork.title%></h1><br>
 <%= @artwork.medium%> <br>
 <%= @artwork.location%> <br>
-
 <%= @artwork.notes%>
+
+
+<form method="get" action="/artworks/<%= @artwork.id %>/edit">
+ <input type="submit" value="edit">
+</form>
 
 
 <form method="post" action="/artworks/<%= @artwork.id %>">
@@ -10,8 +14,5 @@
   <input type="submit" value="delete">
 </form>
 
-<form method="get" action="/artworks/<%= @artwork.id %>/edit">
- <input type="submit" value="edit">
-</form>
 
 
