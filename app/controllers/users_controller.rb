@@ -13,10 +13,7 @@ class UserController < ApplicationController
     end
 
     post '/signup' do
-            @user = User.new
-            @user.email = params[:email]
-            @user.password = params[:password]
-            @user.name = params[:name]
+          @user = User.create(name: params[:name], email: params[:email], password: params[:password])
     
         if  @user.save
             session[:user_id] = @user.id

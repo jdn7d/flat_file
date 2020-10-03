@@ -25,13 +25,7 @@ class ArtworkController < ApplicationController
             redirect "artists/#{@artist.id}"   
     end
 
-    #post '/artworks' do 
-     #   @artist = Artist.find(params[:artist_id])
-     #   params[:artist][:artworks].each do |details|
-     #   Artwork.new(details)
-     #   end
-    #    redirect "artists/#{@artist.id}"   
-    #end
+
     
     
     get '/artworks/:id' do
@@ -63,9 +57,8 @@ class ArtworkController < ApplicationController
         end
     
         delete '/artworks/:id' do
-            @artist = Artist.find(params[:artist_id])
             @artwork = Artwork.delete(params[:id])
-            redirect to "/artists/#{@artist.id}"
+            redirect to "/artists/show"
            
         end
 
