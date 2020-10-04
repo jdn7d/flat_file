@@ -13,13 +13,15 @@ class UserController < ApplicationController
     end
 
     post '/signup' do
-          @user = User.create(name: params[:name], email: params[:email], password: params[:password])
-         @user.errors[:password]
-        if  @user.save
+         
+        @user = User.create(name: params[:name], email: params[:email], password: params[:password])
+        
+        if @user.save
             session[:user_id] = @user.id
             login(params[:email], params[:password])
             redirect '/artists/index'
         else
+            @errors = @user.errors.full_messages
             erb :signup #users/new
         end
     end
