@@ -14,7 +14,7 @@ class UserController < ApplicationController
 
     post '/signup' do
           @user = User.create(name: params[:name], email: params[:email], password: params[:password])
-    
+         @user.errors[:password]
         if  @user.save
             session[:user_id] = @user.id
             login(params[:email], params[:password])
