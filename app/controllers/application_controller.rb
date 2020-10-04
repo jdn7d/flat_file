@@ -6,6 +6,7 @@ class ApplicationController < Sinatra::Base
     enable :sessions
     set :session_secret, "my_application_secret"
     set :views, Proc.new { File.join(root, "../views/") }
+    register Sinatra::Flash
   end
 
   get '/' do 
@@ -13,6 +14,7 @@ class ApplicationController < Sinatra::Base
   end
 
   helpers do 
+
     def logged_in?
       !!current_user
     end
