@@ -1,8 +1,10 @@
 <div class="logged-in">
-<h1>Title: <%= @artwork.title%></h1><br>
-<%= @artwork.medium%> <br>
-<%= @artwork.location%> <br>
-<%= @artwork.notes%>
+    <a id="cancel-button" href="/artists/show">Go back to artist </a>
+<h1>Currently viewing details about  ''<%= @artwork.title%>''</h1><br>
+<h3> Title: <%= @artwork.title%> </h3><br>
+<h3> Medium: <%= @artwork.medium%> </h3> <br>
+<h3> Location: <%= @artwork.location%> </h3> <br>
+<h3> Notes: <%= @artwork.notes%> </h3>
 
 
 <form method="get" action="/artworks/<%= @artwork.id %>/edit">
@@ -14,6 +16,8 @@
   <input id="hidden" type="hidden" name="_method" value="DELETE">
   <input type="submit" value="delete">
 </form>
+
+
 </div>
 
 

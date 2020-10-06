@@ -1,18 +1,24 @@
 <div class="logged-in">
-  <h1 class="main-header">Edit <%= @artwork.title %></h1><br>
-  <h2>Title: <%= @artwork.title %></h2><br>
-  <h2>Notes: <%= @artwork.medium %></h2><br>
+ <a id="cancel-button" href="/artworks/<%= @artwork.id %>">Cancel</a>
 
+  <h1 class="main-header">Edit ''<%= @artwork.title %>'' </h1><br>
+ 
   <form method="post" action="/artworks/<%= @artwork.id %>">
     <input id="hidden" type="hidden" name="_method" value="patch">
    
     <label for="title">Title</label>
-    <input class="input" type="text" name="artwork[title]" placeholder="edit title"  value="<%= @artwork.title %>"required>
+    <input  type="text" name="artwork[title]" placeholder="add title"  value="<%= @artwork.title %>"required><br>
    
-    <label for="medium">Notes</label>
-    <input id="medium" type="text" name="artwork[medium]" value="<%= @artwork.medium %>" />
+    <label for="medium">Medium</label>
+    <input type="text" name="artwork[medium]" placeholder="add medium"  value="<%= @artwork.medium %>" /><br>
   
-    <input type="submit" />
+   <label for="location">Location</label>
+    <input  type="text" name="artwork[location]" placeholder="add location"  value="<%= @artwork.location %>"><br>
+
+     <label for="notes">Notes</label>
+    <input  type="text" name="artwork[notes]" placeholder="add notes"  value="<%= @artwork.notes %>"><br>
+
+    <input type="submit"value="Update" />
     </form>
     </div>
    

@@ -1,14 +1,23 @@
 
-<div class="logged-in">
- <h1 class="main-header"><%= @current_user.name %>'s Flatfile </h1>
+<div class="nav-bar">
+</div>
 
-    <h2 class="smaller-header">My Saved Artists</h2>
- 
+ <h1> <%= @current_user.name %>'s Flatfile </h1>
+ <h2>My Saved Artists</h2>
+
+<% if @artists.empty? %>
+ You don't have any artists save yet!
+ <% else%>
+ <h3>Tap to see the artists artwork</h3>
+<% end %> <br>
+
+ <p>
         <% @artists.each do |artist| %>
         <p>Name: 
         <a href="/artists/<%= artist.id %>">
         <%= artist.name %> </a><br>
         <% end %>
-  
-     <a id="add-artist-button" href="/artists/new">Add an artist</a>
-</div>
+         </p>
+ 
+
+ <a id="add-artist-button" href="/artists/new">Add an artist</a>

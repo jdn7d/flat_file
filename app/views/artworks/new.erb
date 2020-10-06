@@ -1,8 +1,8 @@
-    <a id="cancel-button" href="/artists/<%= @artist.id %>">Cancel</a>
+    <a id="cancel-button" href="/artists">Cancel</a>
 
     
 <div class="logged-in">
-<h1  class="main-header"> Add a new artwork to  <%= @artist.name %> </h1> <br>
+<h1  class="main-header"> Add an artwork by <%= @artist.name %> </h1> <br>
 
 <form action="/artworks" method="post">
 
@@ -17,7 +17,6 @@
     
   <input id="hidden" type="hidden" name="artist_id" value="<%=@artist.id %>">
   
-
-    <button type="submit" class="add" value="Add">
+<input type="submit" class="add" value="Add">
 </form>
 </div>

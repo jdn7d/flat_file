@@ -1,8 +1,9 @@
     <a id="cancel-button" href="/artists">Go back to all artists</a>
 
 <div class="logged-in">
-<h1>Currently viewing <%= @artist.name %></h1><br>
+<h1>Currently viewing work by <%= @artist.name %></h1><br>
  
+<input id="hidden" type="hidden" name="artist_id" value="<%=@artist.id %>">
 
 <% @artist.artworks.each do |artwork| %>
   <p>Title: <a href="/artworks/<%= artwork.id %>">
@@ -19,14 +20,13 @@
 
 <form method="post" action="/artists/<%= @artist.id %>">
   <input id="hidden" type="hidden" name="_method" value="DELETE">
-  <input type="submit" value="delete">
+  <input type="submit" value="Delete artist">
 </form>
-
 
 
 <form method="get" action="/artists/<%= @artist.id %>/edit">
 
- <input type="submit" value="edit">
+ <input type="submit" value="Edit artist">
 </form>
 
 </div>

@@ -9,12 +9,12 @@
     <input id="hidden" type="hidden" name="_method" value="patch">
    
     <label for="name">Name</label>
-    <input class="input" type="text" name="artist[name]" placeholder="edit name"  value="<%= @artist.name %>"required>
+    <input class="input" type="text" name="artist[name]" placeholder="edit name"  value="<%= @artist.name %>" required>
    
     <label for="notes">Notes</label>
     <input id="notes" type="text" name="artist[notes]" value="<%= @artist.notes %>" />
   
-    <input type="submit" />
+    <input type="submit" value="Update" />
     </form>
     
     </div>
