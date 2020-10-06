@@ -1,24 +1,23 @@
+    <a id="cancel-button" href="/artists/<%= @artist.id %>">Cancel</a>
+
+    
 <div class="logged-in">
 <h1  class="main-header"> Add a new artwork to  <%= @artist.name %> </h1> <br>
 
 <form action="/artworks" method="post">
 
-    <label> Artwork Title:</label>
-    <input type="text" name="artwork[title]" placeholder="Artworks Name" required><br>
-      
-    <label> Artwork Medium:</label>
-    <input type="text" name="artwork[medium]" placeholder="Medium"><br>
+    <input class="input-box" type="text" name="artwork[title]" placeholder="Title" required><br>
+   
+    <input class="input-box" type="text" name="artwork[medium]" placeholder="Medium"><br>
     
-    <label> Artwork Location:</label>
-    <input type="text" name="artwork[location]"placeholder="Location" ><br>
+    <input class="input-box" type="text" name="artwork[location]"placeholder="Location" ><br>
 
-    <label> Artwork Notes:</label>
-    <input type="textarea" name="artwork[notes]"placeholder="Notes" ><br>
+    <input class="input-box" type="textarea" name="artwork[notes]"placeholder="Notes" ><br>
 
     
   <input id="hidden" type="hidden" name="artist_id" value="<%=@artist.id %>">
   
 
-    <input type="submit" class="add" value="Add">
+    <button type="submit" class="add" value="Add">
 </form>
 </div>
