@@ -1,8 +1,7 @@
 
-<div class="nav-bar">
-</div>
+ <div class="index">
 
- <h1> <%= @current_user.name %>'s Flatfile </h1>
+
  <h2>My Saved Artists</h2>
 
 <% if @artists.empty? %>
@@ -11,13 +10,16 @@
  <h3>Tap to see the artists artwork</h3>
 <% end %> <br>
 
- <p>
+ <div class="artists-list">
         <% @artists.each do |artist| %>
         <p>Name: 
         <a href="/artists/<%= artist.id %>">
-        <%= artist.name %> </a><br>
+        <%= artist.name %> </a>
+        Notes: <%= artist.notes %> <br>
+
         <% end %>
-         </p>
+         </div>
  
 
  <a id="add-artist-button" href="/artists/new">Add an artist</a>
+</div>

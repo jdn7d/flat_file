@@ -9,9 +9,9 @@
   <body>
      <% if logged_in? %> 
      <div class="nav-bar">
-      <a id="logout-button" href="/logout">Logout</a>
-      <a id="home-button" href="/artists">Home</a>
-      
+      <h1> <%= @current_user.name %>'s Flatfile </h1>  <a id="home-button" href="/artists">Home</a>       <a id="logout-button" href="/logout">Logout</a>
+     
+
      </div>
      <%end%>
 
