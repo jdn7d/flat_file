@@ -6,14 +6,18 @@
     <title>FlatFile</title>
   </head>
   
-  <body>
-     <% if logged_in? %> 
-     <div class="nav-bar">
-      <h1> <%= @current_user.name %>'s Flatfile </h1>  <a id="home-button" href="/artists">Home</a>       <a id="logout-button" href="/logout">Logout</a>
-     
+<body>
 
-     </div>
-     <%end%>
+  <div class="topnav">
+    <% if logged_in? %> 
+    <%#  <h1> <%= @current_user.name %><%#'s Flatfile </h1> %>   
+      <a id="logout-button" href="/logout">Logout</a>
+      <a id="home-button" href="/artists">Home</a>       
+    <%end%>
+  </div>
+  <div style="padding-left:16px">
+    <h2>Flat File</h2>
+  </div>
 
     <div class="container">
       <%= yield %>
