@@ -1,25 +1,20 @@
+<div class="index">
+  <h2>My Saved Artists</h2>
 
- <div class="index">
+    <% if @artists.empty? %>
+      You don't have any artists save yet!
+    <% else%>
+      <h3>Tap to see the artists artwork</h3>
+    <% end %> <br>
 
-
- <h2>My Saved Artists</h2>
-
-<% if @artists.empty? %>
- You don't have any artists save yet!
- <% else%>
- <h3>Tap to see the artists artwork</h3>
-<% end %> <br>
-
- <div class="artists-list">
-        <% @artists.each do |artist| %>
-        <p>Name: 
-        <a href="/artists/<%= artist.id %>">
-        <%= artist.name %> </a>
-        Notes: <%= artist.notes %> <br>
-
-        <% end %>
-         </div>
+  <div class="artists-list">
+     <% @artists.each do |artist| %>
+       <p>Name: 
+       <a href="/artists/<%= artist.id %>">
+       <%= artist.name %> </a>
+       Notes: <%= artist.notes %> <br>
+     <% end %>
+  </div>
  
-
- <a id="add-artist-button" href="/artists/new">Add an artist</a>
+  <a id="add-artist-button" href="/artists/new">Add an artist</a>
 </div>
