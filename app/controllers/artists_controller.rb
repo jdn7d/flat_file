@@ -23,13 +23,12 @@ class ArtistController < ApplicationController
         else
             @artist = Artist.new(name: params[:name],notes: params[:notes])    
             @current_user.artists << @artist 
-            if
-                
-                  @artist.save
-                  redirect "/artists/show"
-                else 
-                    redirect to "/artists/new"
-                end
+        if
+            @artist.save
+            redirect "/artists/show"
+        else 
+            redirect to "/artists/new"
+        end
         end
     end
 

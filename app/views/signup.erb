@@ -5,9 +5,10 @@
 
 
 <% if @errors %>
-   <%= @errors%>
+   <% @errors.each do |error| %>
+   <%= error %></p>
 <% end %>
-
+<% end %>
       <form action="/signup" method="POST">
          <div class="container">
 

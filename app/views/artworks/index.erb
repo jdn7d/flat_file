@@ -1,12 +1,17 @@
-<div class="logged-in">
-<%= @current_user.name %>'s saved Artwork
+<div class="index">
+<h2>My Saved Artwork</h2>
+
+ <% if @artworks.empty? %>
+      You don't have any artwork save yet!
+    <% else%>
+      <h3>Tap to see the artwork details</h3>
+    <% end %> <br>
 
  <% @artworks.each do |work| %>
-    Name: 
-    <a href="/artworks/:id"><%= work.title %> <%= work.artist.name %> </a><br>
-  
-  
+    Title: 
+    <a href="/artworks/:id"><%= work.title %></a>
+    By: 
+    <a href="/artists/<%= work.artist.id %>"><%= work.artist.name %> </a><br>
    <% end %>
      
-        <a href="/artworks/new">Add a new artwork</a>
-        </div>
+</div>

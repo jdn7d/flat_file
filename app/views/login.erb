@@ -5,7 +5,12 @@
     <h2>A place to store your favorite art. </h2>
 
     <form action="/login" method="post">
-
+    
+<% if @errors %>
+  <% @errors.each do |error| %>
+    <%= error %></p>
+  <% end %>
+<% end %>
 
 <div class="container">
    
