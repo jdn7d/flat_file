@@ -1,17 +1,17 @@
 <div class="index">
-<h2>My Saved Artwork</h2>
+  <h2>My Saved Artwork</h2>
 
- <% if @artworks.empty? %>
+  <% if @artworks.empty? %>
       You don't have any artwork save yet!
     <% else%>
       <h3>Tap to see the artwork details</h3>
-    <% end %> <br>
+  <% end %> <br>
 
- <% @artworks.each do |work| %>
-    Title: 
-    <a href="/artworks/:id"><%= work.title %></a>
-    By: 
-    <a href="/artists/<%= work.artist.id %>"><%= work.artist.name %> </a><br>
-   <% end %>
+  <% @artworks.each do |work| %>
+      Title: 
+      <a href="/artworks/:id"><%= work.title %></a>
+      By: 
+      <a href="/artists/<%= work.artist.id %>"><%= work.artist.name %> </a><br>
+    <% end %>
      
 </div>
