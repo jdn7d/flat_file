@@ -27,7 +27,11 @@ class ApplicationController < Sinatra::Base
       @current_user ||= User.find_by(:id => session[:id]) if session[:id]
      
     end
-    
+
+    def can_edit(artist)
+       artist.user_id == session[:id]
+    end
+
     def login(email, password)
       user = User.find_by(:email => email)
       if user && user.authenticate(password)    

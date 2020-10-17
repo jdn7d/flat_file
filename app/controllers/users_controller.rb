@@ -18,8 +18,8 @@ class UserController < ApplicationController
         
         if @user.save
             session[:user_id] = @user.id
-            login(params[:email], params[:password])
-            redirect '/artists/index'
+            
+            redirect '/artists'
         else
             @errors = @user.errors.full_messages
             erb :signup #users/new
@@ -30,7 +30,7 @@ class UserController < ApplicationController
     post "/login" do 
         #login a user with this email
         login(params[:email], params[:password])
-        redirect '/artists/index'
+        redirect '/artists'
     end
     
     get '/logout' do 

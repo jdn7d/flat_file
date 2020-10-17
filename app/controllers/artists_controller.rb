@@ -5,7 +5,7 @@ class ArtistController < ApplicationController
             redirect to '/login'
         else
             @artists = @current_user.artists
-            erb :'artists'       
+            erb :'/artists/index'       
         end
     end
 
@@ -51,10 +51,11 @@ class ArtistController < ApplicationController
             redirect '/login'
         end
         @artist = Artist.find(params[:id])
-        if @artist.user_id != session[:id]
-            redirect '/artists'
-        else 
-            erb :'artists/edit'
+        if can_edit(@artist)
+               erb :'artists/edit'
+            else 
+                redirect '/artists'
+         
         end
     end
 
@@ -63,13 +64,13 @@ class ArtistController < ApplicationController
             redirect '/login'
         end
         @artist = Artist.find(params[:id])
-        if @artist.user_id != session[:id]
-            redirect '/artists'
-        else @artist.update(params[:artist])
+           if can_edit(@artist)
+          @artist.update(params[:artist])
             redirect to "/artists/#{@artist.id}"
+        else
+            redirect '/artists'
         end
             erb :"artists/edit"
-        
     end
 
     delete '/artists/:id' do
@@ -77,11 +78,11 @@ class ArtistController < ApplicationController
             redirect '/login'
         end
             @artist = Artist.find(params[:id])
-        if  @artist.user_id != session[:id]
-            redirect '/artists'
-        else
+        if  can_edit(@artist)
         @artist = Artist.delete(params[:id])
         redirect '/artists'
+        else
+            redirect '/artists' 
     end
     end
 end
