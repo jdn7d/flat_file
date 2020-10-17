@@ -5,7 +5,7 @@ class ArtworkController < ApplicationController
          redirect to '/login'
         else
          @artworks = @current_user.artworks
-         erb :'artworks/index'       
+         erb :'artworks'       
         end
      end
      
