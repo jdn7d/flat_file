@@ -17,7 +17,7 @@ class UserController < ApplicationController
         @user = User.create(name: params[:name], email: params[:email], password: params[:password])
         
         if @user.save
-            session[:user_id] = @user.id
+            session[:id] = @user.id
             
             redirect '/artists'
         else
