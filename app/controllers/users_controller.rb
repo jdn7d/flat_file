@@ -29,8 +29,14 @@ class UserController < ApplicationController
 
     post "/login" do 
         #login a user with this email
-        login(params[:email], params[:password])
+   
+        user = User.find_by(email: params[:email])
+        if user && user.authenticate(params[:password])    
+        session[:id] = user.id
         redirect '/artists'
+        else 
+        redirect '/login'
+        end
     end
     
     get '/logout' do 
