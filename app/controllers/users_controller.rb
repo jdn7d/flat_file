@@ -6,7 +6,7 @@ class UserController < ApplicationController
 
     get '/login' do 
         if logged_in?
-           redirect '/artists/index'
+           redirect '/artists'
         else 
             erb :login
         end
